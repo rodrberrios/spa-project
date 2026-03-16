@@ -1,2 +1,2 @@
-# SPA Project
-Proyecto para un spa.
+# SPA PROJECT
+Super página web para un SPA.
