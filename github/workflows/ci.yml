@@ -1,0 +1,67 @@
+#nombre del proceso 
+
+name: CI Pipeline
+
+
+
+#sobre donde trabaja
+
+on:
+
+ pull_request:
+
+ push:
+
+  branches:
+
+   - develop
+
+
+
+#acciones que ejecutara el servidor de Github Actions
+
+jobs:
+
+ fronend-build:
+
+  runs-on: ubuntu-latest
+
+
+
+  default:
+
+   run:
+
+    working-directory: frontend
+
+
+
+  steps:
+
+  #esto es hacer un git clone del proyecto a la maquina
+
+   - name: Checkout repository
+
+    uses : actions/Checkout@4
+
+
+
+   - name: Setup Node
+
+    uses: actions/setup-nose@4
+
+    with:
+
+     node-version:'20'
+
+
+
+   - name: Install dependencies
+
+    run: nmp Install
+
+
+
+   - name: build frontend
+
+    run: npm run build 
